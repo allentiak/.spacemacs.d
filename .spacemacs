@@ -43,7 +43,7 @@ values."
      git
      (markdown :variables markdown-live-preview-engine 'vmd)
      ;; org
-     python
+     ;python
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
