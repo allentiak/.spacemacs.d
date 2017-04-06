@@ -127,7 +127,7 @@ values."
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
    ;; (default nil)
    dotspacemacs-startup-lists '((recents . 5)
-                               (projects . 7))
+                                (projects . 7))
    ;; True if the home buffer should respond to resize events.
    dotspacemacs-startup-buffer-responsive t
    ;; Default major mode of the scratch buffer (default `text-mode')
