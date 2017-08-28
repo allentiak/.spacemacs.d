@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     csv
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -43,10 +44,10 @@ values."
      git
      (markdown :variables markdown-live-preview-engine 'vmd)
      ;; org
-     ;python
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
+     ;;python
+     ;;;; (shell :variables
+     ;;;;      shell-default-height 30
+     ;;;;      shell-default-position 'bottom)
      spell-checking
      syntax-checking
     (version-control :variables
@@ -334,7 +335,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (winum fuzzy parent-mode flx goto-chg diminish edn paredit peg eval-sexp-fu queue bind-map bind-key f s popup package-build evil avy yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic packed vmd-mode git-gutter+ gitignore-mode fringe-helper magit-popup hydra seq spinner request powerline with-editor git-commit org highlight iedit git-gutter async multiple-cursors yasnippet hide-comnt flycheck-pos-tip pos-tip xelb xpm xterm-color shell-pop multi-term mmm-mode markdown-toc markdown-mode helm-company helm-c-yasnippet gh-md flyspell-correct-helm flyspell-correct flycheck eshell-z eshell-prompt-extras esh-help company-statistics company clojure-snippets auto-yasnippet auto-dictionary ac-ispell auto-complete inflections clojure-mode dash cider anzu smartparens undo-tree helm helm-core magit projectile pkg-info epl ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spacemacs-theme spaceline smeargle restart-emacs rainbow-delimiters quelpa popwin persp-mode pcre2el parinfer paradox orgit org-plus-contrib org-bullets open-junk-file neotree move-text magit-gitflow macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-ag google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu elisp-slime-nav dumb-jump diff-hl define-word column-enforce-mode clj-refactor clean-aindent-mode cider-eval-sexp-fu auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (csv-mode winum fuzzy parent-mode flx goto-chg diminish edn paredit peg eval-sexp-fu queue bind-map bind-key f s popup package-build evil avy yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode packed vmd-mode git-gutter+ gitignore-mode fringe-helper magit-popup hydra seq spinner request powerline with-editor git-commit org highlight iedit git-gutter async multiple-cursors yasnippet hide-comnt flycheck-pos-tip pos-tip xelb xpm xterm-color shell-pop multi-term mmm-mode markdown-toc markdown-mode helm-company helm-c-yasnippet gh-md flyspell-correct-helm flyspell-correct flycheck eshell-z eshell-prompt-extras esh-help company-statistics company clojure-snippets auto-yasnippet auto-dictionary ac-ispell auto-complete inflections clojure-mode dash cider anzu smartparens undo-tree helm helm-core magit projectile pkg-info epl ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spacemacs-theme spaceline smeargle restart-emacs rainbow-delimiters quelpa popwin persp-mode pcre2el parinfer paradox orgit org-plus-contrib org-bullets open-junk-file neotree move-text magit-gitflow macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-ag google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu elisp-slime-nav dumb-jump diff-hl define-word column-enforce-mode clj-refactor clean-aindent-mode cider-eval-sexp-fu auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
