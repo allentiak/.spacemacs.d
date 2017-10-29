@@ -40,8 +40,8 @@ values."
      auto-completion
      ;; better-defaults
      emacs-lisp
-     ;; git
-     ;; markdown
+     git
+     (markdown :variables markdown-live-preview-engine 'vmd)
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -58,11 +58,11 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(parinfer)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(git-flow)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
