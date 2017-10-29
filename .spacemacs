@@ -51,6 +51,8 @@ values."
     (version-control :variables
                   version-control-diff-tool 'git-gutter+
                   version-control-global-margin t)
+
+     ;; added by Leandro
      clojure
     (keyboard-layout :variables kl-layout 'colemak)
      )
