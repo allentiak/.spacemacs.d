@@ -53,7 +53,7 @@ values."
                   version-control-global-margin t)
 
      ;; added by Leandro
-     clojure
+    (clojure :variables cljr-warn-on-eval nil)
     (keyboard-layout :variables kl-layout 'colemak)
      )
    ;; List of additional packages that will be installed without being
