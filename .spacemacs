@@ -59,7 +59,7 @@ This function should only modify configuration layer settings."
 
      ;; added by Leandro
     (clojure :variables cljr-warn-on-eval nil)
-    (keyboard-layout :variables kl-layout 'colemak)
+    (keyboard-layout :variables kl-layout 'colemak-neio)
     latex
     scala
     java
