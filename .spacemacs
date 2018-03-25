@@ -53,17 +53,17 @@ This function should only modify configuration layer settings."
      ;;        shell-default-position 'bottom)
      spell-checking
      syntax-checking
-    (version-control :variables
-                  version-control-diff-tool 'git-gutter+
-                  version-control-global-margin t)
+     (version-control :variables
+                           version-control-diff-tool 'git-gutter+
+                           version-control-global-margin t)
 
-     ;; added by Leandro
+    ;; added by Leandro
     (clojure :variables cljr-warn-on-eval nil)
     (keyboard-layout :variables kl-layout 'colemak-neio)
     latex
     scala
     java
-     )
+    )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
