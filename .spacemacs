@@ -196,7 +196,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-default-font '("Liberation Mono"
                                :size 14.0
                                :weight normal
-                               :height 4.0
+                               :height normal
                                :width normal)
 
    ;; The leader key (default "SPC")
