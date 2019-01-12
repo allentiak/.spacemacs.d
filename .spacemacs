@@ -464,7 +464,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq-default
     magit-diff-refine-hunk 'all
     magit-diff-adjust-tab-width t
-    magit-diff-paint-whitespace t
+    magit-diff-paint-whitespace 'all
     magit-diff-highlight-trailing 'all
     magit-diff-highlight-indentation 'all)
   )
