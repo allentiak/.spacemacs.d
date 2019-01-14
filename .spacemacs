@@ -57,7 +57,9 @@ This function should only modify configuration layer settings."
                            version-control-global-margin t)
 
     ;; added by Leandro
-    (clojure :variables cljr-warn-on-eval nil)
+    (clojure :variables cljr-warn-on-eval nil
+                        clojure-enable-sayid t
+                        clojure-enable-clj-refactor t)
     (parinfer :variables
                 ensure t
                 progn
