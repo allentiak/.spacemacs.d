@@ -39,14 +39,13 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     helm
      auto-completion
      ;; better-defaults
      emacs-lisp
      git
+     helm
      (markdown :variables markdown-live-preview-engine 'vmd)
      multiple-cursors
-     treemacs
      ;;(neotree :variables neo-theme 'icons)
      org
      (shell :variables
@@ -54,6 +53,7 @@ This function should only modify configuration layer settings."
             shell-default-position 'bottom)
      spell-checking
      syntax-checking
+     treemacs
      (version-control :variables
                            version-control-diff-tool 'git-gutter+
                            version-control-global-margin t)
@@ -488,6 +488,7 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  (xterm-mouse-mode -1)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
