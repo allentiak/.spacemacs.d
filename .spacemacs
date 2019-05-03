@@ -43,6 +43,7 @@ This function should only modify configuration layer settings."
      ;; better-defaults
      emacs-lisp
      git
+     github
      helm
      (markdown :variables markdown-live-preview-engine 'vmd)
      multiple-cursors
