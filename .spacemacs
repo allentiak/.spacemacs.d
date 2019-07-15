@@ -89,8 +89,8 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
 
-   ;; static code analyzer for Clojure
-     kibit-helper
+   ;; static code analyzer for Clojure (via Leinengen)
+     #kibit-helper
      )
 
    ;; A list of packages that cannot be updated.
