@@ -60,7 +60,8 @@ This function should only modify configuration layer settings."
 
     (clojure :variables cljr-warn-on-eval nil
                         clojure-enable-sayid t
-                        clojure-enable-clj-refactor t)
+                        clojure-enable-clj-refactor t
+                        cider-repl-pop-to-buffer-on-connect 'display-only)
     (parinfer :variables
                 ensure t
                 progn
@@ -87,11 +88,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(
-
-   ;; static code analyzer for Clojure (via Leinengen)
-   ;;kibit-helper
-     )
+   dotspacemacs-additional-packages '()
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -482,12 +479,6 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (setq-default
-    magit-diff-refine-hunk 'all
-    magit-diff-adjust-tab-width t
-    magit-diff-paint-whitespace 'all
-    magit-diff-highlight-trailing 'all
-    magit-diff-highlight-indentation 'all)
   )
 
 (defun dotspacemacs/user-load ()
