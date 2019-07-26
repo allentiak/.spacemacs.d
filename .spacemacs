@@ -42,7 +42,13 @@ This function should only modify configuration layer settings."
      auto-completion
      ;; better-defaults
      emacs-lisp
-     git
+     (git :variables
+            magit-diff-refine-hunk 'all
+            magit-diff-adjust-tab-width t
+            magit-diff-paint-whitespace t
+            magit-diff-highlight-trailing t)
+            ;; TODO: make the following line work...
+            ;; magit-diff-highlight-indentation '('tabs))
      github
      helm
      (markdown :variables markdown-live-preview-engine 'vmd)
@@ -61,7 +67,7 @@ This function should only modify configuration layer settings."
     (clojure :variables cljr-warn-on-eval nil
                         clojure-enable-sayid t
                         clojure-enable-clj-refactor t
-			                  clojure-enable-linters t
+                        clojure-enable-linters t
                         cider-repl-pop-to-buffer-on-connect 'display-only)
     (parinfer :variables
                 ensure t
