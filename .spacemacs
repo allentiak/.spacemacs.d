@@ -86,6 +86,7 @@ This function should only modify configuration layer settings."
     ;; scala
     ;; java
     html
+    scheme
     )
 
    ;; List of additional packages that will be installed without being
@@ -512,6 +513,7 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   ;; Allow pasting with the middle mouse buttom.
   (xterm-mouse-mode -1)
+  (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-scheme-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
