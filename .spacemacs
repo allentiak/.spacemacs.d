@@ -68,7 +68,9 @@ This function should only modify configuration layer settings."
                         clojure-enable-sayid t
                         clojure-enable-clj-refactor t
                         clojure-enable-linters t
-                        cider-repl-pop-to-buffer-on-connect 'display-only)
+                        cider-repl-pop-to-buffer-on-connect 'display-only
+                        ; support running tests via clojure-cli and deps.edn
+                        cider-clojure-cli-global-options "-A:test")
     (parinfer :variables
                 ensure t
                 progn
