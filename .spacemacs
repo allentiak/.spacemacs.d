@@ -64,13 +64,15 @@ This function should only modify configuration layer settings."
                            version-control-diff-tool 'git-gutter+
                            version-control-global-margin t)
 
-    (clojure :variables cljr-warn-on-eval nil
-                        clojure-enable-sayid t
-                        clojure-enable-clj-refactor t
-                        clojure-enable-linters t
-                        cider-repl-pop-to-buffer-on-connect 'display-only
-                        ; support running tests via clojure-cli and deps.edn
-                        cider-clojure-cli-global-options "-A:test")
+    (clojure :variables
+               cljr-warn-on-eval nil
+               clojure-enable-sayid t
+               clojure-enable-clj-refactor t
+               clojure-enable-linters t
+               cider-repl-pop-to-buffer-on-connect 'display-only
+               ; support running tests via clojure-cli and deps.edn
+               cider-clojure-cli-global-options "-A:test")
+
     (parinfer :variables
                 ensure t
                 progn
