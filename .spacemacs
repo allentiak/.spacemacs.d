@@ -248,7 +248,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-colorize-cursor-according-to-state t
 
    ;; Default font or prioritized list of fonts.
-   dotspacemacs-default-font '("Fira Code Retina"
+   dotspacemacs-default-font '("Roboto Mono Medium"
                                :size 12.0
                                :weight normal
                                :width normal)
