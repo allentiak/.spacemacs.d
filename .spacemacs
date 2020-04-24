@@ -38,6 +38,7 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     spacemacs-visual
      auto-completion
      ;; better-defaults
      emacs-lisp
@@ -247,8 +248,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-colorize-cursor-according-to-state t
 
    ;; Default font or prioritized list of fonts.
-   dotspacemacs-default-font '("Liberation Mono"
-                               :size 24
+   dotspacemacs-default-font '("Fira Code Retina"
+                               :size 12.0
                                :weight normal
                                :width normal)
 
