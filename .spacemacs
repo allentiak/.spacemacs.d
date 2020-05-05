@@ -460,7 +460,7 @@ It should only modify the values of Spacemacs settings."
    ;; %z - mnemonics of buffer, terminal, and keyboard coding systems
    ;; %Z - like %z, but including the end-of-line format
    ;; (default "%I@%S")
-   dotspacemacs-frame-title-format "%I@%S"
+   dotspacemacs-frame-title-format "%b -- %t -- %I@%S"
 
    ;; Format specification for setting the icon title format
    ;; (default nil - same as frame-title-format)
@@ -521,6 +521,7 @@ before packages are loaded."
   ;; Allow pasting with the middle mouse buttom.
   (xterm-mouse-mode -1)
   (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-scheme-mode)
+  (text-scale-set 2)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
