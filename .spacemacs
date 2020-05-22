@@ -65,7 +65,7 @@ This function should only modify configuration layer settings."
                            version-control-diff-tool 'git-gutter+
                            version-control-global-margin t)
 
-    (clojure :variables
+     (clojure :variables
                cljr-warn-on-eval nil
                clojure-enable-sayid t
                clojure-enable-clj-refactor t
@@ -74,7 +74,7 @@ This function should only modify configuration layer settings."
                ; support running tests via clojure-cli and deps.edn
                cider-clojure-cli-global-options "-A:test")
 
-    (parinfer :variables
+     (parinfer :variables
                 ensure t
                 progn
                   (setq parinfer-extensions
@@ -85,14 +85,14 @@ This function should only modify configuration layer settings."
                       ;;paredit        ; Introduce some paredit commands.
                       smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
                       smart-yank)))   ; Yank behavior depend on mode.
-    (keyboard-layout :variables kl-layout 'colemak-neio-inverted)
-    latex
-    ess
-    ;; scala
-    ;; java
-    html
-    scheme
-    )
+     (keyboard-layout :variables kl-layout 'colemak-neio-inverted)
+     latex
+     ess
+     ;; scala
+     ;; java
+     html
+     scheme
+     )
 
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -141,9 +141,9 @@ It should only modify the values of Spacemacs settings."
    ;; portable dumper in the cache directory under dumps sub-directory.
    ;; To load it when starting Emacs add the parameter `--dump-file'
    ;; when invoking Emacs 27.1 executable on the command line, for instance:
-   ;;   ./emacs --dump-file=~/.emacs.d/.cache/dumps/spacemacs.pdmp
-   ;; (default spacemacs.pdmp)
-   dotspacemacs-emacs-dumper-dump-file "spacemacs.pdmp"
+   ;;   ./emacs --dump-file=$HOME/.emacs.d/.cache/dumps/spacemacs-27.1.pdmp
+   ;; (default spacemacs-27.1.pdmp)
+   dotspacemacs-emacs-dumper-dump-file (format "spacemacs-%s.pdmp" emacs-version)
 
    ;; If non-nil ELPA repositories are contacted via HTTPS whenever it's
    ;; possible. Set it to nil if you have no way to use HTTPS in your
@@ -162,6 +162,13 @@ It should only modify the values of Spacemacs settings."
    ;; performance issues due to garbage collection operations.
    ;; (default '(100000000 0.1))
    dotspacemacs-gc-cons '(100000000 0.1)
+
+   ;; Set `read-process-output-max' when startup finishes.
+   ;; This defines how much data is read from a foreign process.
+   ;; Setting this >= 1 MB should increase performance for lsp servers
+   ;; in emacs 27.
+   ;; (default (* 1024 1024))
+   dotspacemacs-read-process-output-max (* 1024 1024)
 
    ;; If non-nil then Spacelpa repository is the primary source to install
    ;; a locked version of packages. If nil then Spacemacs will install the
