@@ -60,10 +60,10 @@ This function should only modify configuration layer settings."
             shell-default-position 'bottom)
      spell-checking
      syntax-checking
-     treemacs
      (version-control :variables
                            version-control-diff-tool 'git-gutter+
                            version-control-global-margin t)
+     treemacs
 
      (clojure :variables
                cljr-warn-on-eval nil
@@ -91,7 +91,7 @@ This function should only modify configuration layer settings."
      ;; scala
      ;; java
      html
-     scheme
+     ;; scheme
      )
 
    ;; List of additional packages that will be installed without being
