@@ -51,7 +51,7 @@ This function should only modify configuration layer settings."
             ;; magit-diff-highlight-indentation '('tabs))
      github
      helm
-     lsp
+     ;; lsp
      (markdown :variables markdown-live-preview-engine 'vmd)
      multiple-cursors
      org
@@ -89,9 +89,9 @@ This function should only modify configuration layer settings."
      latex
      ess
      ;; scala
-     ;; java
+     (java :variables java-backend 'lsp)
      html
-     scheme
+     ;; scheme
      )
 
    ;; List of additional packages that will be installed without being
@@ -527,7 +527,7 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   ;; Allow pasting with the middle mouse buttom.
   (xterm-mouse-mode -1)
-  (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-scheme-mode)
+  ;; (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-scheme-mode)
   (text-scale-set 2)
   )
 
