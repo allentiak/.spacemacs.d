@@ -92,6 +92,7 @@ This function should only modify configuration layer settings."
      (java :variables java-backend 'lsp)
      html
      ;; scheme
+     yaml
      )
 
    ;; List of additional packages that will be installed without being
