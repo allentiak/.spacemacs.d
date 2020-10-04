@@ -91,6 +91,7 @@ This function should only modify configuration layer settings."
      ess
      ;; scala
      (java :variables java-backend 'lsp)
+     (haskell :variables haskell-completion-backend 'dante)
      html
      ;; scheme
      yaml
