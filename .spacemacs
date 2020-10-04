@@ -85,6 +85,7 @@ This function should only modify configuration layer settings."
                       ;;paredit        ; Introduce some paredit commands.
                       smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
                       smart-yank)))   ; Yank behavior depend on mode.
+     
      (keyboard-layout :variables kl-layout 'colemak-neio-inverted)
      latex
      ess
@@ -173,7 +174,9 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil then Spacelpa repository is the primary source to install
    ;; a locked version of packages. If nil then Spacemacs will install the
-   ;; latest version of packages from MELPA. (default nil)
+   ;; latest version of packages from MELPA. Spacelpa is currently in
+   ;; experimental state please use only for testing purposes.
+   ;; (default nil)
    dotspacemacs-use-spacelpa nil
 
    ;; If non-nil then verify the signature for downloaded Spacelpa archives.
