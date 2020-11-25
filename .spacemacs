@@ -69,10 +69,13 @@ This function should only modify configuration layer settings."
                cljr-warn-on-eval nil
                clojure-enable-sayid t
                clojure-enable-clj-refactor t
-               clojure-enable-linters t
+               clojure-enable-linters '(clj-kondo joker)
                cider-repl-pop-to-buffer-on-connect 'display-only
-               ; support running tests via clojure-cli and deps.edn
-               cider-clojure-cli-global-options "-A:test")
+               clojure-toplevel-inside-comment-form t
+               cider-overlays-use-font-lock t
+               ;; support running tests via clojure-cli and deps.edn
+               ;;cider-clojure-cli-global-options "-A:test")
+               cider-preferred-build-tool 'clojure-cli)
 
      (parinfer :variables
                 ensure t
@@ -85,7 +88,7 @@ This function should only modify configuration layer settings."
                       ;;paredit        ; Introduce some paredit commands.
                       smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
                       smart-yank)))   ; Yank behavior depend on mode.
-     
+
      (keyboard-layout :variables kl-layout 'colemak-neio-inverted)
      latex
      ess
@@ -236,6 +239,13 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default major mode of the scratch buffer (default `text-mode')
    dotspacemacs-scratch-mode 'text-mode
+   ;; If non-nil, *scratch* buffer will be persistent. Things you write down in
+   ;; *scratch* buffer will be saved and restored automatically.
+   dotspacemacs-scratch-buffer-persistent nil
+
+   ;; If non-nil, `kill-buffer' on *scratch* buffer
+   ;; will bury it instead of killing.
+   dotspacemacs-scratch-buffer-unkillable nil
 
    ;; Initial message in the scratch buffer, such as "Welcome to Spacemacs!"
    ;; (default nil)
@@ -542,10 +552,16 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
   ;; Allow pasting with the middle mouse buttom.
   (xterm-mouse-mode -1)
-  ;; (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-scheme-mode)
+
+
   (text-scale-set 2)
+
+  ;; Enable safe LISP structural editing
+  ;;(spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-scheme-mode)
+  (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-clojure-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
