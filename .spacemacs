@@ -38,20 +38,34 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     ;;
+     ;; Layers added in alphabetic order
 
-     auto-completion
+     ;; Add tool tips to show doc string of functions
+     ;; Show snippets in the auto-completion popup
+     ;; Show suggestions by most commonly used
+     (auto-completion :variables
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-sort-by-usage t)
+
+     ;; To have auto-completion on as soon as you start typing
+     ;; (auto-completion :variables auto-completion-idle-delay nil)
+
+     ;; https://develop.spacemacs.org/layers/+lang/clojure/README.html
+
      ;; better-defaults
+
      (clojure :variables
-               cljr-warn-on-eval nil
-               clojure-enable-sayid t
-               clojure-enable-clj-refactor t
-               clojure-enable-linters '(clj-kondo joker)
-               cider-repl-pop-to-buffer-on-connect 'display-only
-               clojure-toplevel-inside-comment-form t
-               cider-overlays-use-font-lock t
-               ;; support running tests via clojure-cli and deps.edn
-               ;;cider-clojure-cli-global-options "-A:test")
-               cider-preferred-build-tool 'clojure-cli)
+              cider-clojure-cli-global-options "-M:test"
+              cider-overlays-use-font-lock t
+              cider-preferred-build-tool 'clojure-cli
+              cider-repl-buffer-size-limit 100
+              clojure-backend 'cider
+              clojure-enable-sayid t
+              clojure-enable-clj-refactor t
+              clojure-enable-linters '(clj-kondo joker)
+              clojure-toplevel-inside-comment-form t)
      emacs-lisp
      ess
      (git :variables
@@ -70,6 +84,9 @@ This function should only modify configuration layer settings."
      latex
      ;; lsp
      (markdown :variables markdown-live-preview-engine 'vmd)
+
+     ;; Editing multiple lines of text concurrently
+     ;; `g r' menu in Emacs normal state
      multiple-cursors
      org
      (parinfer :variables
@@ -91,12 +108,21 @@ This function should only modify configuration layer settings."
      spacemacs-visual
      spell-checking
      syntax-checking
-     treemacs
+
+     ;; Visual file manager - `SPC p t'
+     ;; treemacs-no-png-images t removes file and directory icons
+     (treemacs :variables
+               treemacs-indentation 1
+               treemacs-use-filewatch-mode t
+               treemacs-use-follow-mode t)
+
      (version-control :variables
                            version-control-diff-tool 'git-gutter+
                            version-control-global-margin t)
      yaml
      )
+
+      ;; End of dotspacemacs-configuration-layers
 
    ;; List of additional packages that will be installed without being wrapped
    ;; in a layer (generally the packages are installed only and should still be
@@ -272,7 +298,7 @@ It should only modify the values of Spacemacs settings."
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Roboto Mono Medium"
-                               :size 16.0
+                               :size 12.0
                                :weight normal
                                :width normal)
 
@@ -317,7 +343,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil then the last auto saved layouts are resumed automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts t
+   dotspacemacs-auto-resume-layouts nil
 
    ;; If non-nil, auto-generate layout name when creating new layouts. Only has
    ;; effect when using the "jump to layout by number" commands. (default nil)
@@ -561,7 +587,7 @@ before packages are loaded."
 
   ;; Enable safe LISP structural editing
   ;;(spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-scheme-mode)
-  (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-clojure-mode)
+  ;;(spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-clojure-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
