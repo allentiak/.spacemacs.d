@@ -38,33 +38,9 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     spacemacs-visual
+
      auto-completion
      ;; better-defaults
-     emacs-lisp
-     (git :variables
-            magit-diff-refine-hunk 'all
-            magit-diff-adjust-tab-width t
-            magit-diff-paint-whitespace t
-            magit-diff-highlight-trailing t)
-            ;; TODO: make the following line work...
-            ;; magit-diff-highlight-indentation '('tabs))
-     github
-     helm
-     ;; lsp
-     (markdown :variables markdown-live-preview-engine 'vmd)
-     multiple-cursors
-     org
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
-     spell-checking
-     syntax-checking
-     (version-control :variables
-                           version-control-diff-tool 'git-gutter+
-                           version-control-global-margin t)
-     treemacs
-
      (clojure :variables
                cljr-warn-on-eval nil
                clojure-enable-sayid t
@@ -76,7 +52,26 @@ This function should only modify configuration layer settings."
                ;; support running tests via clojure-cli and deps.edn
                ;;cider-clojure-cli-global-options "-A:test")
                cider-preferred-build-tool 'clojure-cli)
-
+     emacs-lisp
+     ess
+     (git :variables
+            magit-diff-refine-hunk 'all
+            magit-diff-adjust-tab-width t
+            magit-diff-paint-whitespace t
+            magit-diff-highlight-trailing t)
+            ;; TODO: make the following line work...
+            ;; magit-diff-highlight-indentation '('tabs))
+     github
+     (haskell :variables haskell-completion-backend 'dante)
+     helm
+     html
+     (java :variables java-backend 'lsp)
+     (keyboard-layout :variables kl-layout 'colemak-neio-inverted)
+     latex
+     ;; lsp
+     (markdown :variables markdown-live-preview-engine 'vmd)
+     multiple-cursors
+     org
      (parinfer :variables
                 ensure t
                 progn
@@ -88,15 +83,18 @@ This function should only modify configuration layer settings."
                       ;;paredit        ; Introduce some paredit commands.
                       smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
                       smart-yank)))   ; Yank behavior depend on mode.
-
-     (keyboard-layout :variables kl-layout 'colemak-neio-inverted)
-     latex
-     ess
      ;; scala
-     (java :variables java-backend 'lsp)
-     (haskell :variables haskell-completion-backend 'dante)
-     html
      ;; scheme
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
+     spacemacs-visual
+     spell-checking
+     syntax-checking
+     treemacs
+     (version-control :variables
+                           version-control-diff-tool 'git-gutter+
+                           version-control-global-margin t)
      yaml
      )
 
@@ -235,17 +233,17 @@ It should only modify the values of Spacemacs settings."
    ;; Default major mode for a new empty buffer. Possible values are mode
    ;; names such as `text-mode'; and `nil' to use Fundamental mode.
    ;; (default `text-mode')
-   dotspacemacs-new-empty-buffer-major-mode 'text-mode
+   dotspacemacs-new-empty-buffer-major-mode 'org-mode
 
    ;; Default major mode of the scratch buffer (default `text-mode')
-   dotspacemacs-scratch-mode 'text-mode
+   dotspacemacs-scratch-mode 'org-mode
    ;; If non-nil, *scratch* buffer will be persistent. Things you write down in
    ;; *scratch* buffer will be saved and restored automatically.
-   dotspacemacs-scratch-buffer-persistent nil
+   dotspacemacs-scratch-buffer-persistent t
 
    ;; If non-nil, `kill-buffer' on *scratch* buffer
    ;; will bury it instead of killing.
-   dotspacemacs-scratch-buffer-unkillable nil
+   dotspacemacs-scratch-buffer-unkillable t
 
    ;; Initial message in the scratch buffer, such as "Welcome to Spacemacs!"
    ;; (default nil)
@@ -274,7 +272,7 @@ It should only modify the values of Spacemacs settings."
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Roboto Mono Medium"
-                               :size 12.0
+                               :size 16.0
                                :weight normal
                                :width normal)
 
@@ -311,15 +309,15 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-distinguish-gui-tab nil
 
    ;; Name of the default layout (default "Default")
-   dotspacemacs-default-layout-name "Default"
+   dotspacemacs-default-layout-name "Global"
 
    ;; If non-nil the default layout name is displayed in the mode-line.
    ;; (default nil)
-   dotspacemacs-display-default-layout nil
+   dotspacemacs-display-default-layout t
 
    ;; If non-nil then the last auto saved layouts are resumed automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts nil
+   dotspacemacs-auto-resume-layouts t
 
    ;; If non-nil, auto-generate layout name when creating new layouts. Only has
    ;; effect when using the "jump to layout by number" commands. (default nil)
@@ -342,7 +340,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil, the paste transient-state is enabled. While enabled, after you
    ;; paste something, pressing `C-j' and `C-k' several times cycles through the
    ;; elements in the `kill-ring'. (default nil)
-   dotspacemacs-enable-paste-transient-state nil
+   dotspacemacs-enable-paste-transient-state t
 
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
    ;; the commands bound to the current keystroke sequence. (default 0.4)
@@ -387,7 +385,7 @@ It should only modify the values of Spacemacs settings."
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
-   dotspacemacs-active-transparency 90
+   dotspacemacs-active-transparency 100
 
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's inactive or deselected.
