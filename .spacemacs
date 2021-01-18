@@ -89,8 +89,7 @@ This function should only modify configuration layer settings."
      org
      (parinfer :variables
                 ensure t
-                progn
-                  '(setq parinfer-extensions
+                parinfer-extensions
                     '(defaults       ; should be included.
                       pretty-parens  ; different paren styles for different modes.
                       evil           ; If you use Evil.
@@ -98,9 +97,10 @@ This function should only modify configuration layer settings."
                       ;;paredit        ; Introduce some paredit commands.
                       smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
                       smart-yank     ; Yank behavior depend on mode.
-                      ))
+                      )
                  parinfer-auto-switch-indent-mode t
-                 parinfer-auto-switch-indent-mode-when-closing t)
+                 parinfer-auto-switch-indent-mode-when-closing t
+                 parinfer-lighters '("Parinfer:Indent" . "Parinfer:Paren"))
      ;; scala
      ;; scheme
      (shell :variables
