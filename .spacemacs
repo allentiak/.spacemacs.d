@@ -53,9 +53,7 @@ This function should only modify configuration layer settings."
      ;; (auto-completion :variables auto-completion-idle-delay nil)
 
      ;; https://develop.spacemacs.org/layers/+lang/clojure/README.html
-
      ;; better-defaults
-
      (clojure :variables
               cider-clojure-cli-global-options "-M:test"
               cider-overlays-use-font-lock t
@@ -92,14 +90,17 @@ This function should only modify configuration layer settings."
      (parinfer :variables
                 ensure t
                 progn
-                  (setq parinfer-extensions
+                  '(setq parinfer-extensions
                     '(defaults       ; should be included.
                       pretty-parens  ; different paren styles for different modes.
                       evil           ; If you use Evil.
                       ;;lispy          ; If you use Lispy. With this extension, you should install Lispy and do not enable lispy-mode directly.
                       ;;paredit        ; Introduce some paredit commands.
                       smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
-                      smart-yank)))   ; Yank behavior depend on mode.
+                      smart-yank     ; Yank behavior depend on mode.
+                      ))
+                 parinfer-auto-switch-indent-mode t
+                 parinfer-auto-switch-indent-mode-when-closing t)
      ;; scala
      ;; scheme
      (shell :variables
@@ -247,9 +248,13 @@ It should only modify the values of Spacemacs settings."
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
-   ;; `recents' `bookmarks' `projects' `agenda' `todos'.
+   ;; `recents' `recents-by-project' `bookmarks' `projects' `agenda' `todos'.
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
+   ;; The exceptional case is `recents-by-project', where list-type must be a
+   ;; pair of numbers, e.g. `(recents-by-project . (7 .  5))', where the first
+   ;; number is the project limit and the second the limit on the recent files
+   ;; within a project.
    dotspacemacs-startup-lists '((recents . 5)
                                 (projects . 7))
 
@@ -263,13 +268,14 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default major mode of the scratch buffer (default `text-mode')
    dotspacemacs-scratch-mode 'org-mode
+
    ;; If non-nil, *scratch* buffer will be persistent. Things you write down in
    ;; *scratch* buffer will be saved and restored automatically.
-   dotspacemacs-scratch-buffer-persistent t
+   dotspacemacs-scratch-buffer-persistent nil
 
    ;; If non-nil, `kill-buffer' on *scratch* buffer
    ;; will bury it instead of killing.
-   dotspacemacs-scratch-buffer-unkillable t
+   dotspacemacs-scratch-buffer-unkillable nil
 
    ;; Initial message in the scratch buffer, such as "Welcome to Spacemacs!"
    ;; (default nil)
@@ -335,7 +341,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-distinguish-gui-tab nil
 
    ;; Name of the default layout (default "Default")
-   dotspacemacs-default-layout-name "Global"
+   dotspacemacs-default-layout-name "Default"
 
    ;; If non-nil the default layout name is displayed in the mode-line.
    ;; (default nil)
@@ -578,16 +584,15 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-
   ;; Allow pasting with the middle mouse buttom.
   (xterm-mouse-mode -1)
 
 
-  (text-scale-set 2)
+  (text-scale-set 3)
 
   ;; Enable safe LISP structural editing
   ;;(spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-scheme-mode)
-  ;;(spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-clojure-mode)
+  (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-clojure-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
