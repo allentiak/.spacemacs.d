@@ -55,7 +55,16 @@ This function should only modify configuration layer settings."
      ;; https://develop.spacemacs.org/layers/+lang/clojure/README.html
      ;; better-defaults
      (clojure :variables
-              cider-clojure-cli-global-options "-M:test"
+              ;;
+              ;; The following line breaks nREPL:
+              ;;
+              ;; cider-clojure-cli-global-options "-M:test"
+              ;;
+              ;; For now, the 'test' dependency should be injected manually, via
+              ;; [SPC u , '].
+              ;;
+              ;; https://clojurians.zulipchat.com/#narrow/stream/151763-beginners/topic/nrepl.20on.20Emacs.3A.20clojure.20-Sdeps.3A.20FileNotFoundException/near/225029917
+              ;;
               cider-overlays-use-font-lock t
               cider-preferred-build-tool 'clojure-cli
               cider-repl-buffer-size-limit 100
