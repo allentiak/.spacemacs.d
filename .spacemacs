@@ -96,20 +96,24 @@ This function should only modify configuration layer settings."
      ;; `g r' menu in Emacs normal state
      multiple-cursors
      org
-     (parinfer :variables
-                ensure t
-                parinfer-extensions
-                    '(defaults       ; should be included.
-                      pretty-parens  ; different paren styles for different modes.
-                      evil           ; If you use Evil.
-                      ;;lispy          ; If you use Lispy. With this extension, you should install Lispy and do not enable lispy-mode directly.
-                      ;;paredit        ; Introduce some paredit commands.
-                      smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
-                      smart-yank     ; Yank behavior depend on mode.
-                      )
-                 parinfer-auto-switch-indent-mode t
-                 parinfer-auto-switch-indent-mode-when-closing t
-                 parinfer-lighters '("Parinfer:Indent" . "Parinfer:Paren"))
+     ;; 'parinfer-mode' has been replaced by 'parinfer-rust-mode'
+     ;; While this is updated is Spacemacs, comment it out...
+     ;; https://github.com/syl20bnr/spacemacs/issues/14460
+     ;;
+     ;;(parinfer :variables
+     ;;           ensure t
+     ;;           parinfer-extensions
+     ;;               '(defaults       ; should be included.
+     ;;                 pretty-parens  ; different paren styles for different modes.
+     ;;                 evil           ; If you use Evil.
+     ;;                 ;;lispy          ; If you use Lispy. With this extension, you should install Lispy and do not enable lispy-mode directly.
+     ;;                 ;;paredit        ; Introduce some paredit commands.
+     ;;                 smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
+     ;;                 smart-yank     ; Yank behavior depend on mode.
+     ;;                 )
+     ;;            parinfer-auto-switch-indent-mode t
+     ;;            parinfer-auto-switch-indent-mode-when-closing t
+     ;;            parinfer-lighters '("Parinfer:Indent" . "Parinfer:Paren"))
      ;; scala
      ;; scheme
      (shell :variables
@@ -132,7 +136,7 @@ This function should only modify configuration layer settings."
      yaml
      )
 
-      ;; End of dotspacemacs-configuration-layers
+     ;; End of dotspacemacs-configuration-layers
 
    ;; List of additional packages that will be installed without being wrapped
    ;; in a layer (generally the packages are installed only and should still be
@@ -142,7 +146,14 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(   
+ 
+   (parinfer-rust-mode
+   	:hook emacs-lisp-mode
+   	:init
+	(setq parinfer-rust-auto-download t))
+
+   )
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
