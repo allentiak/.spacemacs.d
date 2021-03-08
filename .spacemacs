@@ -96,24 +96,16 @@ This function should only modify configuration layer settings."
      ;; `g r' menu in Emacs normal state
      multiple-cursors
      org
-     ;; 'parinfer-mode' has been replaced by 'parinfer-rust-mode'
-     ;; While this is updated is Spacemacs, comment it out...
-     ;; https://github.com/syl20bnr/spacemacs/issues/14460
+     parinfer
+     ;; Currently, parinfer "wraps in its default configuration"
+     ;; See 
+     ;; https://github.com/syl20bnr/spacemacs/commit/b7cbcb5ed5741fbe289a99efaed0350812ed85ad
+     ;; Once that is fixed, the following parameters may be needed:
+     ;; (parinfer-rust-mode
+     ;;	    :hook emacs-lisp-mode
+     ;;	    :init
+     ;;	        (setq parinfer-rust-auto-download t))
      ;;
-     ;;(parinfer :variables
-     ;;           ensure t
-     ;;           parinfer-extensions
-     ;;               '(defaults       ; should be included.
-     ;;                 pretty-parens  ; different paren styles for different modes.
-     ;;                 evil           ; If you use Evil.
-     ;;                 ;;lispy          ; If you use Lispy. With this extension, you should install Lispy and do not enable lispy-mode directly.
-     ;;                 ;;paredit        ; Introduce some paredit commands.
-     ;;                 smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
-     ;;                 smart-yank     ; Yank behavior depend on mode.
-     ;;                 )
-     ;;            parinfer-auto-switch-indent-mode t
-     ;;            parinfer-auto-switch-indent-mode-when-closing t
-     ;;            parinfer-lighters '("Parinfer:Indent" . "Parinfer:Paren"))
      ;; scala
      ;; scheme
      (shell :variables
@@ -146,14 +138,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(   
- 
-   (parinfer-rust-mode
-   	:hook emacs-lisp-mode
-   	:init
-	(setq parinfer-rust-auto-download t))
-
-   )
+   dotspacemacs-additional-packages '()
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
