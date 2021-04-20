@@ -266,6 +266,9 @@ It should only modify the values of Spacemacs settings."
    ;; True if the home buffer should respond to resize events. (default t)
    dotspacemacs-startup-buffer-responsive t
 
+   ;; The minimum delay in seconds between number key presses. (default 0.4)
+   dotspacemacs-startup-buffer-multi-digit-delay 0.4
+
    ;; Default major mode for a new empty buffer. Possible values are mode
    ;; names such as `text-mode'; and `nil' to use Fundamental mode.
    ;; (default `text-mode')
@@ -445,6 +448,10 @@ It should only modify the values of Spacemacs settings."
    ;; when it reaches the top or bottom of the screen. (default t)
    dotspacemacs-smooth-scrolling t
 
+   ;; Show the scroll bar while scrolling. The auto hide time can be configured
+   ;; by setting this variable to a number. (default t)
+   dotspacemacs-scroll-bar-while-scrolling t
+
    ;; Control line numbers activation.
    ;; If set to `t', `relative' or `visual' then line numbers are enabled in all
    ;; `prog-mode' and `text-mode' derivatives. If set to `relative', line
@@ -587,15 +594,15 @@ See the header of this file for more information."
 This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
-If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  )
+If you are unsure, try setting them in `dotspacemacs/user-config' first.")
+
 
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
 This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
-dump."
-  )
+dump.")
+
 
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
@@ -605,7 +612,6 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   ;; Allow pasting with the middle mouse buttom.
   (xterm-mouse-mode -1)
-
 
   (text-scale-set 3)
 
