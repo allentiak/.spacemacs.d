@@ -65,6 +65,7 @@ This function should only modify configuration layer settings."
               ;;
               ;; https://clojurians.zulipchat.com/#narrow/stream/151763-beginners/topic/nrepl.20on.20Emacs.3A.20clojure.20-Sdeps.3A.20FileNotFoundException/near/225029917
               ;;
+              cider-inject-dependencies-at-jack-in t
               cider-overlays-use-font-lock t
               cider-preferred-build-tool 'clojure-cli
               cider-repl-buffer-size-limit 100
@@ -130,6 +131,7 @@ This function should only modify configuration layer settings."
 
      ;; End of dotspacemacs-configuration-layers
 
+
    ;; List of additional packages that will be installed without being wrapped
    ;; in a layer (generally the packages are installed only and should still be
    ;; loaded using load/require/use-package in the user-config section below in
@@ -163,9 +165,13 @@ It should only modify the values of Spacemacs settings."
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
-   ;; If non-nil then enable support for the portable dumper. You'll need
-   ;; to compile Emacs 27 from source following the instructions in file
+   ;; If non-nil then enable support for the portable dumper. You'll need to
+   ;; compile Emacs 27 from source following the instructions in file
    ;; EXPERIMENTAL.org at to root of the git repository.
+   ;;
+   ;; WARNING: pdumper does not work with Native Compilation, so it's disabled
+   ;; regardless of the following setting when native compilation is in effect.
+   ;;
    ;; (default nil)
    dotspacemacs-enable-emacs-pdumper nil
 
@@ -260,7 +266,7 @@ It should only modify the values of Spacemacs settings."
    ;; pair of numbers, e.g. `(recents-by-project . (7 .  5))', where the first
    ;; number is the project limit and the second the limit on the recent files
    ;; within a project.
-   dotspacemacs-startup-lists '((recents . 5)
+   dotspacemacs-startup-lists '((recents . 10)
                                 (projects . 7))
 
    ;; True if the home buffer should respond to resize events. (default t)
@@ -628,6 +634,7 @@ before packages are loaded."
   ;;(spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-scheme-mode)
   (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-clojure-mode)
   )
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
