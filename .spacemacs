@@ -69,7 +69,7 @@ This function should only modify configuration layer settings."
               cider-overlays-use-font-lock t
               cider-preferred-build-tool 'clojure-cli
               cider-repl-buffer-size-limit 100
-              clojure-backend 'cider
+              clojure-backend 'lsp
               clojure-enable-sayid t
               clojure-enable-clj-refactor t
               clojure-enable-linters '(clj-kondo joker)
@@ -89,7 +89,7 @@ This function should only modify configuration layer settings."
      ;;(java :variables java-backend 'lsp)
      (keyboard-layout :variables kl-layout 'colemak-neio-inverted)
      latex
-     ;; lsp
+     lsp
      (markdown :variables markdown-live-preview-engine 'vmd)
 
      ;; Editing multiple lines of text concurrently
@@ -139,7 +139,9 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+   inf-clojure
+   )
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
