@@ -74,6 +74,7 @@ This function should only modify configuration layer settings."
               clojure-enable-clj-refactor t
               clojure-enable-linters '(clj-kondo joker)
               clojure-toplevel-inside-comment-form t)
+     dap
      emacs-lisp
      ;;ess
      (git :variables
