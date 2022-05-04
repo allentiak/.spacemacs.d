@@ -120,7 +120,8 @@ This function should only modify configuration layer settings."
      (treemacs :variables
                treemacs-indentation 1
                treemacs-use-filewatch-mode t
-               treemacs-use-follow-mode t)
+               treemacs-use-follow-mode t
+               treemacs-use-git-mode 'deferred)
 
      (version-control :variables
                            version-control-diff-tool 'git-gutter+
