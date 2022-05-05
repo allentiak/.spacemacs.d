@@ -58,7 +58,7 @@ This function should only modify configuration layer settings."
               ;;
               ;; The following line breaks nREPL:
               ;;
-              ;; cider-clojure-cli-global-options "-M:test"
+              ;; cider-clojure-cli-aliases "-M:test"
               ;;
               ;; For now, the 'test' dependency should be injected manually, via
               ;; [SPC u , '].
