@@ -87,7 +87,7 @@ This function should only modify configuration layer settings."
      ;;(haskell :variables haskell-completion-backend 'dante)
      helm
      html
-     ;;(java :variables java-backend 'lsp)
+     (java :variables java-backend 'lsp)
      (keyboard-layout :variables kl-layout 'colemak-neio-inverted)
      latex
      lsp
