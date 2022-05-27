@@ -638,6 +638,11 @@ before packages are loaded."
   ;; Enable safe LISP structural editing
   ;;(spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-scheme-mode)
   (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-clojure-mode)
+
+  ;; Enable DAP degugging work in ClojureScript (WIP)
+  ;; (Still don't really know how to configure it)
+  (require 'dap-chrome)
+  (require 'dap-firefox)
   )
 
 
