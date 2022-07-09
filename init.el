@@ -648,10 +648,19 @@ before packages are loaded."
   ;;(spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-scheme-mode)
   (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-clojure-mode)
 
-  ;; Enable DAP degugging work in ClojureScript (WIP)
-  ;; (Still don't really know how to configure it)
+
+  ;; Enable DAP debugging in ClojureScript.
+  ;; Trying almost all options...
+
+  ;; This one downloads OK.
   (require 'dap-chrome)
-  (require 'dap-firefox)
+
+  ;; These two cannot be downloaded... 
+  ;; (require 'dap-firefox)
+  ;; (require 'dap-node)
+
+  ;; I'm not into trying this one...
+  ;; (require 'dap-edge)
   )
 
 
