@@ -264,6 +264,7 @@ It should only modify the values of Spacemacs settings."
    ;; heights. If set to a number (int or float) it is used as a constant
    ;; scaling factor for the default logo size.
    dotspacemacs-startup-banner-scale 'auto
+
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
@@ -290,6 +291,7 @@ It should only modify the values of Spacemacs settings."
    ;; This has no effect in terminal or if "all-the-icons" package or the font
    ;; is not installed. (default nil)
    dotspacemacs-startup-buffer-show-icons nil
+
    ;; Default major mode for a new empty buffer. Possible values are mode
    ;; names such as `text-mode'; and `nil' to use Fundamental mode.
    ;; (default `text-mode')
