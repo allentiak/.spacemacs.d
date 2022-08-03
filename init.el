@@ -85,6 +85,11 @@ This function should only modify configuration layer settings."
             ;; TODO: make the following line work...
             ;; magit-diff-highlight-indentation '('tabs))
      ;;(haskell :variables haskell-completion-backend 'dante)
+     (go :variables
+            go-backend 'lsp
+            go-format-before-save t
+            go-use-gocheck-for-testing t
+            go-use-golangci-lint t)
      helm
      html
      (java :variables java-backend 'lsp)
