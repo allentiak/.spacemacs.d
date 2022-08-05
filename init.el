@@ -112,6 +112,9 @@ This function should only modify configuration layer settings."
      ;;     :init
      ;;         (setq parinfer-rust-auto-download t))
      ;;
+     (plantuml :variables
+               plantuml-jar-path "/usr/share/plantuml/plantuml.jar"
+               org-plantuml-jar-path "/usr/share/plantuml/plantuml.jar")
      ;; scala
      ;; scheme
      (shell :variables
