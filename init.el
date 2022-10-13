@@ -80,6 +80,8 @@ This function should only modify configuration layer settings."
               clojure-indent-style 'align-arguments
               clojure-align-forms-automatically t
               clojure-toplevel-inside-comment-form t)
+     colors
+     command-log
      dap
      emacs-lisp
      ;;ess
