@@ -104,7 +104,8 @@ This function should only modify configuration layer settings."
      (keyboard-layout :variables kl-layout 'colemak-neio-inverted)
      latex
      lsp
-     (markdown :variables markdown-live-preview-engine 'vmd)
+     (markdown :variables
+               markdown-live-preview-engine 'vmd)
 
      ;; Editing multiple lines of text concurrently
      ;; `g r' menu in Emacs normal state
