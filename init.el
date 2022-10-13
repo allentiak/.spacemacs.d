@@ -65,7 +65,7 @@ This function should only modify configuration layer settings."
               ;;
               ;; https://clojurians.zulipchat.com/#narrow/stream/151763-beginners/topic/nrepl.20on.20Emacs.3A.20clojure.20-Sdeps.3A.20FileNotFoundException/near/225029917
               ;;
-              cider-inject-dependencies-at-jack-in t
+              ;; cider-inject-dependencies-at-jack-in t
               cider-overlays-use-font-lock t
               cider-preferred-build-tool 'clojure-cli
               cider-repl-buffer-size-limit 100
