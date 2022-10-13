@@ -69,10 +69,14 @@ This function should only modify configuration layer settings."
               cider-overlays-use-font-lock t
               cider-preferred-build-tool 'clojure-cli
               cider-repl-buffer-size-limit 100
+              cider-result-overlay-position 'at-point
               clojure-backend 'lsp
               clojure-enable-sayid t
               clojure-enable-clj-refactor t
+              clojure-enable-kaocha-runner t
               clojure-enable-linters '(clj-kondo joker)
+              clojure-indent-style 'align-arguments
+              clojure-align-forms-automatically t
               clojure-toplevel-inside-comment-form t)
      dap
      emacs-lisp
