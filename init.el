@@ -84,12 +84,14 @@ This function should only modify configuration layer settings."
      emacs-lisp
      ;;ess
      (git :variables
-            magit-diff-refine-hunk 'all
-            magit-diff-adjust-tab-width t
-            magit-diff-paint-whitespace t
-            magit-diff-highlight-trailing t)
-            ;; TODO: make the following line work...
-            ;; magit-diff-highlight-indentation '('tabs))
+          git-magit-status-fullscreen t
+          magit-diff-adjust-tab-width t
+          magit-diff-paint-whitespace t
+          magit-diff-highlight-trailing t
+          magit-diff-refine-hunk 'all
+          ;; TODO: make the following line work...
+          ;; magit-diff-highlight-indentation '('tabs)
+          )
      ;;(haskell :variables haskell-completion-backend 'dante)
      (go :variables
             go-backend 'lsp
