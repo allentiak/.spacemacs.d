@@ -97,6 +97,8 @@ This function should only modify configuration layer settings."
      ;;(haskell :variables haskell-completion-backend 'dante)
      (go :variables
             go-backend 'lsp
+            go-dap-mode 'dap-dlv-go
+            godoc-at-point-function 'godoc-gogetdoc
             go-format-before-save t
             go-use-gocheck-for-testing t
             go-use-golangci-lint t)
