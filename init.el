@@ -682,7 +682,7 @@ before packages are loaded."
   ;; This one downloads OK.
   (require 'dap-chrome)
 
-  ;; These two cannot be downloaded... 
+  ;; These two cannot be downloaded...
   ;; (require 'dap-firefox)
   ;; (require 'dap-node)
 
@@ -693,4 +693,3 @@ before packages are loaded."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
-
