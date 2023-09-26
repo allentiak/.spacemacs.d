@@ -126,6 +126,7 @@ This function should only modify configuration layer settings."
      (plantuml :variables
                plantuml-jar-path "/usr/share/plantuml/plantuml.jar"
                org-plantuml-jar-path "/usr/share/plantuml/plantuml.jar")
+     python
      ;; scala
      ;; scheme
      (shell :variables
@@ -183,6 +184,11 @@ This function should only modify configuration layer settings."
 This function is called at the very beginning of Spacemacs startup,
 before layer configuration.
 It should only modify the values of Spacemacs settings."
+
+;; This was useful only once, during a configuration problem in MELPA.
+;; See https://github.com/melpa/melpa/issues/8687 (already solved)
+;; (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
