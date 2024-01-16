@@ -153,6 +153,9 @@ This function should only modify configuration layer settings."
                treemacs-use-filewatch-mode t
                treemacs-use-follow-mode t
                treemacs-use-git-mode 'deferred)
+     (typescript :variables
+                 typescript-backend 'lsp
+                 typescript-lsp-linter nil)
 
      (version-control :variables
                            version-control-diff-tool 'git-gutter+
