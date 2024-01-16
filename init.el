@@ -100,6 +100,7 @@ This function should only modify configuration layer settings."
             go-format-before-save t
             go-use-gocheck-for-testing t
             go-use-golangci-lint t)
+     graphql
      helm
      html
      (java :variables java-backend 'lsp)
