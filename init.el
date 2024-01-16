@@ -103,6 +103,15 @@ This function should only modify configuration layer settings."
      helm
      html
      (java :variables java-backend 'lsp)
+     (javascript :variables javascript-backend 'lsp
+                            javascript-fmt-on-save t
+                            javascript-fmt-tool 'web-beautify
+                            javascript-import-tool 'import-js
+                            javascript-repl `nodejs
+                            js-indent-level 2
+                            js2-basic-offset 2
+                            js2-mode-show-parse-errors nil
+                            js2-mode-show-strict-warnings nil)
      (keyboard-layout :variables kl-layout 'colemak-neio-inverted)
      latex
      lsp
