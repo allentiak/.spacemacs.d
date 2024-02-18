@@ -114,6 +114,8 @@ This function should only modify configuration layer settings."
                             js2-mode-show-parse-errors nil
                             js2-mode-show-strict-warnings nil)
      (keyboard-layout :variables kl-layout 'colemak-neio-inverted)
+     (kotlin :variables
+              kotlin-backend 'lsp)
      latex
      lsp
      (markdown :variables
