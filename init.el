@@ -126,15 +126,6 @@ This function should only modify configuration layer settings."
      multiple-cursors
      org
      parinfer
-     ;; Currently, parinfer "wraps in its default configuration"
-     ;; See
-     ;; https://github.com/syl20bnr/spacemacs/commit/b7cbcb5ed5741fbe289a99efaed0350812ed85ad
-     ;; Once that is fixed, the following parameters may be needed:
-     ;; (parinfer-rust-mode
-     ;;     :hook emacs-lisp-mode
-     ;;     :init
-     ;;         (setq parinfer-rust-auto-download t))
-     ;;
      (plantuml :variables
                plantuml-jar-path "/usr/share/plantuml/plantuml.jar"
                org-plantuml-jar-path "/usr/share/plantuml/plantuml.jar")
