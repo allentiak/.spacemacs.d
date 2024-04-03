@@ -81,6 +81,9 @@ This function should only modify configuration layer settings."
      colors
      command-log
      dap
+     ;; (elixir :variables elixir-backend 'lsp
+     ;;                   elixir-ls-path "~/opt/elixir-ls")
+     (elixir :variables elixir-backend 'alchemist)
      emacs-lisp
      ;;ess
      (git :variables
