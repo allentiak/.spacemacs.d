@@ -83,7 +83,7 @@ This function should only modify configuration layer settings."
      dap
      ;; (elixir :variables elixir-backend 'lsp
      ;;                   elixir-ls-path "~/opt/elixir-ls")
-     (elixir :variables elixir-backend 'alchemist)
+     ;; (elixir :variables elixir-backend 'alchemist)
      emacs-lisp
      ;;ess
      (git :variables
@@ -96,13 +96,13 @@ This function should only modify configuration layer settings."
           ;; magit-diff-highlight-indentation '('tabs)
           )
      ;; (haskell :variables haskell-completion-backend 'dante)
-     (go :variables
-            go-backend 'lsp
-            go-dap-mode 'dap-dlv-go
-            godoc-at-point-function 'godoc-gogetdoc
-            go-format-before-save t
-            go-use-gocheck-for-testing t
-            go-use-golangci-lint t)
+     ;; (go :variables
+     ;;      go-backend 'lsp
+     ;;      go-dap-mode 'dap-dlv-go
+     ;;      godoc-at-point-function 'godoc-gogetdoc
+     ;;      go-format-before-save t
+     ;;      go-use-gocheck-for-testing t
+     ;;      go-use-golangci-lint t)
      graphql
      helm
      html
@@ -117,8 +117,8 @@ This function should only modify configuration layer settings."
                             js2-mode-show-parse-errors nil
                             js2-mode-show-strict-warnings nil)
      (keyboard-layout :variables kl-layout 'colemak-neio-inverted)
-     (kotlin :variables
-              kotlin-backend 'lsp)
+     ;; (kotlin :variables
+     ;;          kotlin-backend 'lsp)
      latex
      lsp
      (markdown :variables
