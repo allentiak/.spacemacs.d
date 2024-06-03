@@ -133,6 +133,9 @@ This function should only modify configuration layer settings."
                plantuml-jar-path "/usr/share/plantuml/plantuml.jar"
                org-plantuml-jar-path "/usr/share/plantuml/plantuml.jar")
      python
+     (rust :variables
+            lsp-rust-analyzer-cargo-auto-reload t
+            rustic-format-on-save t)
      ;; scala
      ;; scheme
      (shell :variables
