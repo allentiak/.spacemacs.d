@@ -45,45 +45,48 @@ This function should only modify configuration layer settings."
      ;; Show snippets in the auto-completion popup
      ;; Show suggestions by most commonly used
      (auto-completion :variables
-                      auto-completion-enable-help-tooltip t
-                      auto-completion-enable-snippets-in-popup t
-                      auto-completion-enable-sort-by-usage t)
+                        auto-completion-enable-help-tooltip t
+                        auto-completion-enable-snippets-in-popup t
+                        auto-completion-enable-sort-by-usage t)
 
      ;; To have auto-completion on as soon as you start typing
-     ;; (auto-completion :variables auto-completion-idle-delay nil)
+     ;; (auto-completion :variables
+     ;;                    auto-completion-idle-delay nil)
 
      ;; https://develop.spacemacs.org/layers/+lang/clojure/README.html
      ;; better-defaults
      (clojure :variables
-              ;;
-              ;; The following line breaks nREPL:
-              ;;
-              ;; cider-clojure-cli-aliases "-M:test"
-              ;;
-              ;; For now, the 'test' dependency should be injected manually, via
-              ;; [SPC u , '].
-              ;;
-              ;; https://clojurians.zulipchat.com/#narrow/stream/151763-beginners/topic/nrepl.20on.20Emacs.3A.20clojure.20-Sdeps.3A.20FileNotFoundException/near/225029917
-              ;;
-              ;; cider-inject-dependencies-at-jack-in t
-              cider-overlays-use-font-lock t
-              cider-preferred-build-tool 'clojure-cli
-              cider-repl-buffer-size-limit 250
-              cider-result-overlay-position 'at-point
-              clojure-backend 'lsp
-              clojure-enable-sayid t
-              clojure-enable-clj-refactor t
-              clojure-enable-kaocha-runner t
-              clojure-enable-linters '(clj-kondo joker)
-              clojure-indent-style 'align-arguments
-              clojure-align-forms-automatically t
-              clojure-toplevel-inside-comment-form t)
+                ;;
+                ;; The following line breaks nREPL:
+                ;;
+                ;; cider-clojure-cli-aliases "-M:test"
+                ;;
+                ;; For now, the 'test' dependency should be injected manually, via
+                ;; [SPC u , '].
+                ;;
+                ;; https://clojurians.zulipchat.com/#narrow/stream/151763-beginners/topic/nrepl.20on.20Emacs.3A.20clojure.20-Sdeps.3A.20FileNotFoundException/near/225029917
+                ;;
+                ;; cider-inject-dependencies-at-jack-in t
+                cider-overlays-use-font-lock t
+                cider-preferred-build-tool 'clojure-cli
+                cider-repl-buffer-size-limit 250
+                cider-result-overlay-position 'at-point
+                clojure-backend 'lsp
+                clojure-enable-sayid t
+                clojure-enable-clj-refactor t
+                clojure-enable-kaocha-runner t
+                clojure-enable-linters '(clj-kondo joker)
+                clojure-indent-style 'align-arguments
+                clojure-align-forms-automatically t
+                clojure-toplevel-inside-comment-form t)
      colors
      command-log
      dap
-     ;; (elixir :variables elixir-backend 'lsp
-     ;;                   elixir-ls-path "~/opt/elixir-ls")
-     ;; (elixir :variables elixir-backend 'alchemist)
+     ;; (elixir :variables
+     ;;           elixir-backend 'lsp
+     ;;           elixir-ls-path "~/opt/elixir-ls")
+     ;; (elixir :variables
+     ;;           elixir-backend 'alchemist)
      emacs-lisp
      ;;ess
      (git :variables
@@ -106,23 +109,25 @@ This function should only modify configuration layer settings."
      graphql
      helm
      html
-     (java :variables java-backend 'lsp)
-     (javascript :variables javascript-backend 'lsp
-                            javascript-fmt-on-save t
-                            javascript-fmt-tool 'web-beautify
-                            javascript-import-tool 'import-js
-                            javascript-repl `nodejs
-                            js-indent-level 2
-                            js2-basic-offset 2
-                            js2-mode-show-parse-errors nil
-                            js2-mode-show-strict-warnings nil)
      (keyboard-layout :variables kl-layout 'colemak-neio-inverted)
+     (java :variables
+             java-backend 'lsp)
+     (javascript :variables
+                   javascript-backend 'lsp
+                   javascript-fmt-on-save t
+                   javascript-fmt-tool 'web-beautify
+                   javascript-import-tool 'import-js
+                   javascript-repl `nodejs
+                   js-indent-level 2
+                   js2-basic-offset 2
+                   js2-mode-show-parse-errors nil
+                   js2-mode-show-strict-warnings nil)
      ;; (kotlin :variables
      ;;          kotlin-backend 'lsp)
      latex
      lsp
      (markdown :variables
-               markdown-live-preview-engine 'vmd)
+                 markdown-live-preview-engine 'vmd)
 
      ;; Editing multiple lines of text concurrently
      ;; `g r' menu in Emacs normal state
@@ -130,17 +135,17 @@ This function should only modify configuration layer settings."
      org
      parinfer
      (plantuml :variables
-               plantuml-jar-path "/usr/share/plantuml/plantuml.jar"
-               org-plantuml-jar-path "/usr/share/plantuml/plantuml.jar")
+                 plantuml-jar-path "/usr/share/plantuml/plantuml.jar"
+                 org-plantuml-jar-path "/usr/share/plantuml/plantuml.jar")
      python
      (rust :variables
-            lsp-rust-analyzer-cargo-auto-reload t
-            rustic-format-on-save t)
+             lsp-rust-analyzer-cargo-auto-reload t
+             rustic-format-on-save t)
      ;; scala
      ;; scheme
      (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
+              shell-default-height 30
+              shell-default-position 'bottom)
      spacemacs-visual
      spell-checking
      sql
@@ -149,21 +154,21 @@ This function should only modify configuration layer settings."
      ;; Visual file manager - `SPC p t'
      ;; treemacs-no-png-images t removes file and directory icons
      (treemacs :variables
-               treemacs-indentation 1
-               treemacs-use-filewatch-mode t
-               treemacs-use-follow-mode t
-               treemacs-use-git-mode 'deferred)
+                 treemacs-indentation 1
+                 treemacs-use-filewatch-mode t
+                 treemacs-use-follow-mode t
+                 treemacs-use-git-mode 'deferred)
      (typescript :variables
-                 typescript-backend 'lsp
-                 typescript-lsp-linter nil)
+                   typescript-backend 'lsp
+                   typescript-lsp-linter nil)
 
      (version-control :variables
-                           version-control-diff-tool 'git-gutter+
-                           version-control-global-margin t)
+                      version-control-diff-tool 'git-gutter+
+                      version-control-global-margin t)
      yaml
      )
 
-     ;; End of dotspacemacs-configuration-layers
+   ;; End of dotspacemacs-configuration-layers
 
 
    ;; List of additional packages that will be installed without being wrapped
@@ -363,7 +368,9 @@ It should only modify the values of Spacemacs settings."
    ;; (default t)
    dotspacemacs-colorize-cursor-according-to-state t
 
-   ;; Default font or prioritized list of fonts. The `:size' can be specified as
+   ;; Default font or prioritized list of fonts. This setting has no effect when
+   ;; running Emacs in terminal. The font set here will be used for default and
+   ;; fixed-pitch faces. The `:size' can be specified as
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Roboto Mono Medium"
@@ -457,6 +464,11 @@ It should only modify the values of Spacemacs settings."
    ;; displays the buffer in a same-purpose window even if the buffer can be
    ;; displayed in the current window. (default nil)
    dotspacemacs-switch-to-buffer-prefers-purpose nil
+
+   ;; Whether side windows (such as those created by treemacs or neotree)
+   ;; are kept or minimized by `spacemacs/toggle-maximize-window' (SPC w m).
+   ;; (default t)
+   dotspacemacs-maximize-window-keep-side-windows t
 
    ;; If non-nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
@@ -579,6 +591,13 @@ It should only modify the values of Spacemacs settings."
    ;; (default '("rg" "ag" "pt" "ack" "grep"))
    dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
 
+   ;; The backend used for undo/redo functionality. Possible values are
+   ;; `undo-fu', `undo-redo' and `undo-tree' see also `evil-undo-system'.
+   ;; Note that saved undo history does not get transferred when changing
+   ;; your undo system. The default is currently `undo-fu' as `undo-tree'
+   ;; is not maintained anymore and `undo-redo' is very basic."
+   dotspacemacs-undo-system 'undo-fu
+
    ;; Format specification for setting the frame title.
    ;; %a - the `abbreviated-file-name', or `buffer-name'
    ;; %t - `projectile-project-name'
@@ -657,7 +676,7 @@ default it calls `spacemacs/load-spacemacs-env' which loads the environment
 variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
 See the header of this file for more information."
   (spacemacs/load-spacemacs-env)
-)
+  )
 
 (defun dotspacemacs/user-init ()
   "Initialization for user code:
@@ -665,7 +684,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-)
+  )
 
 
 (defun dotspacemacs/user-load ()
@@ -673,7 +692,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
 dump."
-)
+  )
 
 
 (defun dotspacemacs/user-config ()
@@ -711,3 +730,26 @@ before packages are loaded."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(package-selected-packages
+     '(yasnippet-snippets yapfify yaml-mode ws-butler writeroom-mode winum which-key web-mode web-beautify vundo volatile-highlights vmd-mode vim-powerline vi-tilde-fringe undo-fu-session undo-fu typescript-mode treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil toml-mode toc-org terminal-here term-cursor tagedit symon symbol-overlay string-inflection string-edit-at-point sql-indent sphinx-doc spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline space-doc smeargle slim-mode shell-pop scss-mode sayid sass-mode rustic ron-mode restart-emacs rainbow-mode rainbow-identifiers rainbow-delimiters quickrun pytest pylookup pyenv-mode pydoc py-isort pug-mode prettier-js popwin poetry plantuml-mode pippel pipenv pip-requirements pcre2el password-generator parinfer-rust-mode paradox overseer orgit-forge org-superstar org-rich-yank org-projectile org-present org-pomodoro org-mime org-download org-contrib org-cliplink open-junk-file nyan-mode npm-mode nose nodejs-repl nameless mvn multi-vterm multi-term multi-line maven-test-mode markdown-toc macrostep lsp-ui lsp-pyright lsp-origami lsp-latex lsp-java lorem-ipsum livid-mode live-py-mode link-hint keycast kaocha-runner json-reformat json-navigator json-mode js2-refactor js-doc inspector info+ indent-guide importmagic impatient-mode hybrid-mode hungry-delete holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-lsp helm-ls-git helm-git-grep helm-descbinds helm-css-scss helm-company helm-comint helm-cider helm-c-yasnippet helm-ag groovy-mode groovy-imports graphql-mode google-translate golden-ratio gnuplot gitignore-templates git-timemachine git-modes git-messenger git-link git-gutter-fringe+ gh-md flyspell-correct-helm flycheck-pos-tip flycheck-package flycheck-joker flycheck-elsa flycheck-clj-kondo flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-tex evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eshell-z eshell-prompt-extras esh-help emr emmet-mode elisp-slime-nav elisp-demos elisp-def editorconfig eat dumb-jump drag-stuff dotenv-mode dired-quick-sort diminish devdocs define-word cython-mode company-web company-statistics company-reftex company-quickhelp company-math company-auctex company-anaconda command-log-mode column-enforce-mode color-identifiers-mode code-review code-cells clojure-snippets clj-refactor clean-aindent-mode cider-eval-sexp-fu centered-cursor-mode browse-at-remote blacken auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile all-the-icons aggressive-indent ace-link ace-jump-helm-line)))
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   )
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+  )
