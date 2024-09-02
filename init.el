@@ -109,7 +109,6 @@ This function should only modify configuration layer settings."
      graphql
      helm
      html
-     (keyboard-layout :variables kl-layout 'colemak-neio-inverted)
      (java :variables
              java-backend 'lsp)
      (javascript :variables
@@ -122,6 +121,8 @@ This function should only modify configuration layer settings."
                    js2-basic-offset 2
                    js2-mode-show-parse-errors nil
                    js2-mode-show-strict-warnings nil)
+     (keyboard-layout :variables
+                         kl-layout 'colemak-neio-literal)
      ;; (kotlin :variables
      ;;          kotlin-backend 'lsp)
      latex
