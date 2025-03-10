@@ -144,7 +144,7 @@ This function should only modify configuration layer settings."
                  org-plantuml-jar-path "/usr/share/plantuml/plantuml.jar")
      (python :variables
                python-backend 'lsp
-               python-lsp-server 'pyright)
+               python-lsp-server 'pylsp)
      (rust :variables
              lsp-rust-analyzer-cargo-auto-reload t
              rustic-format-on-save t)
