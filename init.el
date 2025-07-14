@@ -45,9 +45,9 @@ This function should only modify configuration layer settings."
      ;; Show snippets in the auto-completion popup
      ;; Show suggestions by most commonly used
      (auto-completion :variables
-                        auto-completion-enable-help-tooltip t
-                        auto-completion-enable-snippets-in-popup t
-                        auto-completion-enable-sort-by-usage t)
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-sort-by-usage t)
 
      ;; To have auto-completion on as soon as you start typing
      ;; (auto-completion :variables
@@ -56,29 +56,29 @@ This function should only modify configuration layer settings."
      ;; https://develop.spacemacs.org/layers/+lang/clojure/README.html
      ;; better-defaults
      (clojure :variables
-                ;;
-                ;; The following line breaks nREPL:
-                ;;
-                ;; cider-clojure-cli-aliases "-M:test"
-                ;;
-                ;; For now, the 'test' dependency should be injected manually, via
-                ;; [SPC u , '].
-                ;;
-                ;; https://clojurians.zulipchat.com/#narrow/stream/151763-beginners/topic/nrepl.20on.20Emacs.3A.20clojure.20-Sdeps.3A.20FileNotFoundException/near/225029917
-                ;;
-                ;; cider-inject-dependencies-at-jack-in t
-                cider-overlays-use-font-lock t
-                cider-preferred-build-tool 'clojure-cli
-                cider-repl-buffer-size-limit 250
-                cider-result-overlay-position 'at-point
-                clojure-backend 'lsp
-                clojure-enable-sayid t
-                clojure-enable-clj-refactor t
-                clojure-enable-kaocha-runner t
-                clojure-enable-linters '(clj-kondo joker)
-                clojure-indent-style 'align-arguments
-                clojure-align-forms-automatically t
-                clojure-toplevel-inside-comment-form t)
+              ;;
+              ;; The following line breaks nREPL:
+              ;;
+              ;; cider-clojure-cli-aliases "-M:test"
+              ;;
+              ;; For now, the 'test' dependency should be injected manually, via
+              ;; [SPC u , '].
+              ;;
+              ;; https://clojurians.zulipchat.com/#narrow/stream/151763-beginners/topic/nrepl.20on.20Emacs.3A.20clojure.20-Sdeps.3A.20FileNotFoundException/near/225029917
+              ;;
+              ;; cider-inject-dependencies-at-jack-in t
+              cider-overlays-use-font-lock t
+              cider-preferred-build-tool 'clojure-cli
+              cider-repl-buffer-size-limit 250
+              cider-result-overlay-position 'at-point
+              clojure-backend 'lsp
+              clojure-enable-sayid t
+              clojure-enable-clj-refactor t
+              clojure-enable-kaocha-runner t
+              clojure-enable-linters '(clj-kondo joker)
+              clojure-indent-style 'align-arguments
+              clojure-align-forms-automatically t
+              clojure-toplevel-inside-comment-form t)
      colors
      command-log
      dap
@@ -110,25 +110,25 @@ This function should only modify configuration layer settings."
      helm
      html
      (java :variables
-             java-backend 'lsp)
+           java-backend 'lsp)
      (javascript :variables
-                   javascript-backend 'lsp
-                   javascript-fmt-on-save t
-                   javascript-fmt-tool 'web-beautify
-                   javascript-import-tool 'import-js
-                   javascript-repl `nodejs
-                   js-indent-level 2
-                   js2-basic-offset 2
-                   js2-mode-show-parse-errors nil
-                   js2-mode-show-strict-warnings nil)
+                 javascript-backend 'lsp
+                 javascript-fmt-on-save t
+                 javascript-fmt-tool 'web-beautify
+                 javascript-import-tool 'import-js
+                 javascript-repl `nodejs
+                 js-indent-level 2
+                 js2-basic-offset 2
+                 js2-mode-show-parse-errors nil
+                 js2-mode-show-strict-warnings nil)
      (keyboard-layout :variables
-                         kl-layout 'colemak-neio-literal)
+                      kl-layout 'colemak-neio-literal)
      ;; (kotlin :variables
      ;;          kotlin-backend 'lsp)
      latex
      lsp
      (markdown :variables
-                 markdown-live-preview-engine 'vmd)
+               markdown-live-preview-engine 'vmd)
 
      ;; Editing multiple lines of text concurrently
      ;; `g r' menu in Emacs normal state
@@ -136,19 +136,19 @@ This function should only modify configuration layer settings."
      org
      parinfer
      (plantuml :variables
-                 plantuml-jar-path "/usr/share/plantuml/plantuml.jar"
-                 org-plantuml-jar-path "/usr/share/plantuml/plantuml.jar")
+               plantuml-jar-path "/usr/share/plantuml/plantuml.jar"
+               org-plantuml-jar-path "/usr/share/plantuml/plantuml.jar")
      (python :variables
-               python-backend 'lsp
-               python-lsp-server 'pylsp)
+             python-backend 'lsp
+             python-lsp-server 'pylsp)
      (rust :variables
-             lsp-rust-analyzer-cargo-auto-reload t
-             rustic-format-on-save t)
+           lsp-rust-analyzer-cargo-auto-reload t
+           rustic-format-on-save t)
      ;; scala
      ;; scheme
      (shell :variables
-              shell-default-height 30
-              shell-default-position 'bottom)
+            shell-default-height 30
+            shell-default-position 'bottom)
      spacemacs-visual
      spell-checking
      sql
@@ -157,13 +157,13 @@ This function should only modify configuration layer settings."
      ;; Visual file manager - `SPC p t'
      ;; treemacs-no-png-images t removes file and directory icons
      (treemacs :variables
-                 treemacs-indentation 1
-                 treemacs-use-filewatch-mode t
-                 treemacs-use-follow-mode t
-                 treemacs-use-git-mode 'deferred)
+               treemacs-indentation 1
+               treemacs-use-filewatch-mode t
+               treemacs-use-follow-mode t
+               treemacs-use-git-mode 'deferred)
      (typescript :variables
-                   typescript-backend 'lsp
-                   typescript-lsp-linter nil)
+                 typescript-backend 'lsp
+                 typescript-lsp-linter nil)
 
      (version-control :variables
                       version-control-diff-tool 'git-gutter+
