@@ -126,6 +126,7 @@ This function should only modify configuration layer settings."
      ;; (kotlin :variables
      ;;          kotlin-backend 'lsp)
      latex
+     (llm-client :variables llm-client-enable-gptel t)
      lsp
      (markdown :variables
                markdown-live-preview-engine 'vmd)
@@ -182,7 +183,9 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+   chatgpt-shell
+   )
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -698,6 +701,41 @@ before packages are loaded."
   ;; Enable safe LISP structural editing
   ;;(spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-scheme-mode)
   (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-clojure-mode)
+
+
+  ;; ChatGPT/DeepSeek configuration
+  (with-eval-after-load 'chatgpt-shell
+    ;; Set up for DeepSeek's web API
+    (setq chatgpt-shell-model "deepseek-chat")
+    (setq chatgpt-shell-request-backend 'curl)
+    (setq chatgpt-shell-curl-options
+          '("-s" "--compressed"
+            "-H" "Content-Type: application/json"
+            "-H" "Accept: application/json"
+            "-H" "Origin: https://chat.deepseek.com"
+            "-H" "Referer: https://chat.deepseek.com/"
+            "--data-raw"))
+    ;; Custom request function for DeepSeek
+    (defun chatgpt-shell--deepseek-request (prompt)
+      (let* ((url "https://chat.deepseek.com/chat/completion")
+             (data (json-encode `(("messages" . [[("role" . "user")
+                                                 ("content" . ,prompt)]])
+                                  ("model" . "deepseek-chat")
+                                  ("temperature" . 0.5)))))
+        (shell-command-to-string
+         (format "curl '%s' %s '%s'"
+                 url
+                 (mapconcat #'identity chatgpt-shell-curl-options " ")
+                 (shell-quote-argument data)))))
+    ;; Response parsing
+    (defun chatgpt-shell--deepseek-parse (response)
+      (let* ((json (json-parse-string response :object-type 'alist)))
+        (alist-get 'text (aref (alist-get 'choices json) 0)))
+    ;; Apply overrides
+    (advice-add 'chatgpt-shell--request :override #'chatgpt-shell--deepseek-request)
+    (setq chatgpt-shell-response-filter-fn #'chatgpt-shell--deepseek-parse)
+    ;; Key binding (SPC a d for DeepSeek)
+    (spacemacs/set-leader-keys "a d" 'chatgpt-shell)))
 
 
   ;; Enable DAP debugging in ClojureScript (and JavaScript).
