@@ -55,6 +55,7 @@ This function should only modify configuration layer settings."
 
      ;; https://develop.spacemacs.org/layers/+lang/clojure/README.html
      ;; better-defaults
+     (c-c++ :variables c-c++-backend 'lsp-ccls)
      (clojure :variables
               ;;
               ;; The following line breaks nREPL:
