@@ -126,9 +126,9 @@ This function should only modify configuration layer settings."
      ;; (kotlin :variables
      ;;          kotlin-backend 'lsp)
      latex
-     (llm-client :variables
-                 llm-client-enable-ellama t
-                 llm-client-enable-gptel t)
+     ;; (llm-client :variables
+     ;;             llm-client-enable-ellama t
+     ;;             llm-client-enable-gptel t)
      lsp
      (markdown :variables
                markdown-live-preview-engine 'vmd)
@@ -186,7 +186,7 @@ This function should only modify configuration layer settings."
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
-   chatgpt-shell
+   eca
    )
 
    ;; A list of packages that cannot be updated.
