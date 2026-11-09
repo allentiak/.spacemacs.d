@@ -356,10 +356,10 @@ It should only modify the values of Spacemacs settings."
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Go Mono"
                                ;; for 1K screen
-                               ;; :size 12.0
+                               :size 12.0
 
                                ;; for 1.5K screen
-                               :size 16.0
+                               ;; :size 16.0
 
                                ;; for 4K screen
                                ;; :size 20.0
