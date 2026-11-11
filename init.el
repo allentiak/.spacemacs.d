@@ -170,7 +170,7 @@ This function should only modify configuration layer settings."
                  typescript-lsp-linter nil)
 
      (version-control :variables
-                      version-control-diff-tool 'git-gutter+
+                      version-control-diff-tool 'diff-hl
                       version-control-global-margin t)
      yaml
      )
